@@ -7,8 +7,6 @@ const NODE_ENV = process.env.NODE_ENV?.toLowerCase() || 'production';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
-
 // Define the port number the server will listen on
 const PORT = process.env.PORT || 3000;
 
@@ -21,8 +19,19 @@ const app = express();
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+/**
+  * Routes
+  */
 app.get('/', (req, res) => {
-  res.send('Hello from the US!');
+    res.sendFile(path.join(__dirname, 'src/views/home.html'));
+});
+
+app.get('/organizations', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/views/organizations.html'));
+});
+
+app.get('/projects', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/views/projects.html'));
 });
 
 app.listen(PORT, () => {
