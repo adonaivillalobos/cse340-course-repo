@@ -18,7 +18,7 @@ body nav ul {
     margin: 0;
     display: flex;
     flex-wrap: nowrap; /* keep one line */
-    gap: 10px; /* 🔥 reduced spacing */
+    gap: 10px; /* reduced spacing */
 }
 
 body nav li {
@@ -29,11 +29,11 @@ body nav a {
     text-decoration: none;
     color: #1e3a8a;
     font-weight: 600;
-    font-size: 14px; /* 🔥 slightly smaller for mobile fit */
+    font-size: 14px; /* slightly smaller for mobile fit */
     position: relative;
     transition: color 0.3s ease;
     white-space: nowrap;
-    padding-bottom: 4px; /* 🔥 gives space for underline */
+    padding-bottom: 4px; /* gives space for underline */
 }
 
 /* Animated underline */
@@ -43,7 +43,7 @@ body nav a::after {
     width: 0%;
     height: 2px;
     left: 0;
-    bottom: 0; /* 🔥 FIX: no longer cut off */
+    bottom: 0; 
     background-color: #22c55e;
     transition: width 0.3s ease;
 }
