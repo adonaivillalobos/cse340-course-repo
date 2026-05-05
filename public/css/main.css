@@ -8,15 +8,21 @@ html, body {
 }
 
 /* Navigation */
+body nav {
+    overflow-x: auto; /* enables horizontal scroll on small screens */
+}
+
 body nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: nowrap; /* keeps items in one line */
+    gap: 20px;
 }
 
 body nav li {
     display: inline;
-    margin-right: 20px;
 }
 
 body nav a {
@@ -26,6 +32,7 @@ body nav a {
     font-size: 16px;
     position: relative;
     transition: color 0.3s ease;
+    white-space: nowrap; /* prevents text from breaking */
 }
 
 /* Animated underline */
@@ -46,4 +53,9 @@ body nav a:hover {
 
 body nav a:hover::after {
     width: 100%;
+}
+
+/* Optional: hide scrollbar on mobile */
+body nav ul::-webkit-scrollbar {
+    display: none;
 }
