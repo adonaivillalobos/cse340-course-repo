@@ -1,15 +1,15 @@
 /* Base styles */
 html, body {
-    background-color: #d1fae5; /* soft neutral background */
+    background-color: #d1fae5;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 20px;
-    color: #1f2937; /* dark gray text */
+    color: #1f2937;
 }
 
 /* Navigation */
 body nav {
-    overflow-x: visible; /* no horizontal scrolling needed */
+    overflow-x: auto; /* keep horizontal scroll */
 }
 
 body nav ul {
@@ -17,9 +17,8 @@ body nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap; /* allows items to move to next line */
-    gap: 15px;
-    justify-content: center; /* optional: centers nav on mobile */
+    flex-wrap: nowrap; /* keep one line */
+    gap: 10px; /* 🔥 reduced spacing */
 }
 
 body nav li {
@@ -28,12 +27,13 @@ body nav li {
 
 body nav a {
     text-decoration: none;
-    color: #1e3a8a; /* deep blue */
+    color: #1e3a8a;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px; /* 🔥 slightly smaller for mobile fit */
     position: relative;
     transition: color 0.3s ease;
-    white-space: nowrap; /* keeps words together */
+    white-space: nowrap;
+    padding-bottom: 4px; /* 🔥 gives space for underline */
 }
 
 /* Animated underline */
@@ -43,20 +43,20 @@ body nav a::after {
     width: 0%;
     height: 2px;
     left: 0;
-    bottom: -5px;
-    background-color: #22c55e; /* green accent */
+    bottom: 0; /* 🔥 FIX: no longer cut off */
+    background-color: #22c55e;
     transition: width 0.3s ease;
 }
 
 body nav a:hover {
-    color: #3b82f6; /* lighter blue hover */
+    color: #3b82f6;
 }
 
 body nav a:hover::after {
     width: 100%;
 }
 
-/* Optional: hide scrollbar (not really needed anymore) */
+/* Optional: hide scrollbar */
 body nav ul::-webkit-scrollbar {
     display: none;
 }
