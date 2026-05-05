@@ -1,30 +1,49 @@
+/* Base styles */
 html, body {
-    background-color: lightblue;
-    font-family: Arial, sans-serif;
+    background-color: #d1fae5; /* soft neutral background */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 20px;
+    color: #1f2937; /* dark gray text */
 }
 
-body {
-    nav {
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+/* Navigation */
+body nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-        li {
-            display: inline;
-            margin-right: 15px;
-        }
+body nav li {
+    display: inline;
+    margin-right: 20px;
+}
 
-        a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
+body nav a {
+    text-decoration: none;
+    color: #1e3a8a; /* deep blue */
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+}
 
-            &:hover {
-                color: #0066cc;
-            }
-        }
-    }
+/* Animated underline */
+body nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: #22c55e; /* green accent */
+    transition: width 0.3s ease;
+}
+
+body nav a:hover {
+    color: #3b82f6; /* lighter blue hover */
+}
+
+body nav a:hover::after {
+    width: 100%;
 }
