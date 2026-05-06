@@ -3,6 +3,7 @@ import express from 'express';
 
 import { fileURLToPath } from 'url';
 import path from 'path';
+import { getAllOrganizations } from './src/models/organizations.js'
 
 const NODE_ENV = process.env.NODE_ENV?.toLowerCase() || 'production';
 const PORT = process.env.PORT || 3000;
@@ -30,9 +31,12 @@ app.get('/', (req, res) => {
   res.render('home', { title });
 });
 
-app.get('/organizations' , (req, res) => {
-  const title = 'Organizations';
-  res.render('organizations', { title });
+app.get('/organizations', async (req, res) => {
+    const organizations = await getAllOrganizations();
+    console.log(organizations);
+      
+    const title = 'Our Partner Organizations';
+    res.render('organizations', { title });
 });
 
 app.get('/projects' , (req, res) => {
