@@ -1,14 +1,19 @@
 <%- include('partials/header') %>
-    <main>
-        <h1><%= title %></h1>
-        <p>Here are a few of our partner organizations:</p>
-        <ul>
-            <% organizations.forEach(org => { %>
-                <>
-                    <img src="/images/<%= org.logo_filename %>" alt="<%= org.name %> logo">
+
+<main>
+    <h1><%= title %></h1>
+    <p>Here are a few of our partner organizations:</p>
+
+    <ul class="org-list">
+        <% organizations.forEach(org => { %>
+            <li class="org-item">
+                <img src="/images/<%= org.logo_filename %>" alt="<%= org.name %> logo">
+                <span>
                     <strong><%= org.name %></strong>: <%= org.contact_email %>
-                </li>
-            <% }) %>    
-        </ul>
-    </main>
+                </span>
+            </li>
+        <% }) %>    
+    </ul>
+</main>
+
 <%- include('partials/footer') %>
