@@ -32,7 +32,6 @@ app.get('/', (req, res) => {
 
 app.get('/organizations', async (req, res) => {
     const organizations = await getAllOrganizations();
-    console.log(organizations);
       
     const title = 'Our Partner Organizations';
     res.render('organizations', { title, organizations});
@@ -55,5 +54,6 @@ app.listen(PORT, async () => {
     console.log(`Environment: ${NODE_ENV}`);
   } catch (error) {
     console.error('Error connecting to the database:', error);
+    process.exit(1); // Exit with failure
   }
 });
