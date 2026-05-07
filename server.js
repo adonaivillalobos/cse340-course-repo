@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 import { testConnection } from './src/models/db.js';
 import { getAllOrganizations } from './src/models/organizations.js'
-import { getAllProjects } from './src/models/projects.js'; // ✅ FIXED name
 
 const NODE_ENV = process.env.NODE_ENV?.toLowerCase() || 'production';
 const PORT = process.env.PORT || 3000;
@@ -23,7 +22,7 @@ app.set('views', path.join(__dirname, 'src/views'));
  * Configure Express middleware
  */
 
-//Serve static files from the "public" directory
+//Server static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
@@ -39,12 +38,9 @@ app.get('/organizations', async (req, res) => {
     res.render('organizations', { title, organizations});
 });
 
-app.get('/projects' , async (req, res) => {
-  const projects = await getAllProjects();
-  console.log(projects);
-
-  const title = 'FutureProjects';
-  res.render('projects', { title, projects});
+app.get('/projects' , (req, res) => {
+  const title = 'Projects';
+  res.render('projects', { title });
 });
 
 app.get('/categories' , (req, res) => {
