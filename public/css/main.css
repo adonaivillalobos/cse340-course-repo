@@ -60,3 +60,69 @@ body nav a:hover::after {
 body nav ul::-webkit-scrollbar {
     display: none;
 }
+
+
+/* ========================= */
+/* Projects Section Styling  */
+/* ========================= */
+
+/* Title & intro */
+main h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+main > p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Grid layout */
+main ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* Project cards */
+main ul li {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5); /* gradient added */
+    padding: 16px;
+    border-radius: 12px;
+
+    border: 1px solid #bbf7d0; /* subtle border */
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+}
+
+/* Hover effect */
+main ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #d1fae5, #bbf7d0); /* stronger on hover */
+}
+
+/* Title inside card */
+main ul li strong {
+    display: block;
+    font-size: 18px;
+    color: #065f46; /* upgraded color */
+    margin-bottom: 8px;
+}
+
+/* Paragraph spacing */
+main ul li p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+/* Labels */
+main ul li p strong {
+    color: #22c55e;
+}
