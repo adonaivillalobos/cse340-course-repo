@@ -58,3 +58,32 @@ INSERT INTO service_project (organization_id, title, description, location, date
 (3, 'Health Fair', 'Free health checkups for community', 'Salt Lake City', '2026-08-20');
 
 SELECT * FROM service_project;
+
+-- CREATE TABLE category
+CREATE TABLE category (
+    category_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+-- CREATE TABLE project & category
+CREATE TABLE project_category (
+    project_id INT NOT NULL,
+    category_id INT NOT NULL,
+    PRIMARY KEY (project_id, category_id),
+    FOREIGN KEY (project_id) REFERENCES service_project(project_id),
+    FOREIGN KEY (category_id) REFERENCES category(category_id)
+);
+
+-- INSERT
+INSERT INTO category (name) VALUES
+('Environment'),
+('Health'),
+('Education');
+
+-- INSERT project_category
+INSERT INTO project_category (project_id, category_id) VALUES
+(1, 1),
+(2, 2);
+
+-- SELECT
+SELECT * FROM category;
