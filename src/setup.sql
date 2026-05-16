@@ -77,8 +77,9 @@ CREATE TABLE project_category (
 -- INSERT
 INSERT INTO category (name) VALUES
 ('Environment'),
-('Health'),
-('Education');
+('Education'),
+('Community Service')
+('Health and Wellness');
 
 -- INSERT project_category
 INSERT INTO project_category (project_id, category_id) VALUES
